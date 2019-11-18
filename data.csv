@@ -1,0 +1,64 @@
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,,,,,,
+,request_partner,ID,ID | null,ID | null,yes,null,"{?role: [ std | tch ], lang: [ en | fr ... ], theme: int}",,,,,,,,
+,call_invite,ID,yes,ID,yes,null,,,,,,,,,
+,call_start,ID,yes,ID,yes,null,,,,,,,,,
+,call_end,ID,yes,ID,yes,(optional),"{reason: ""text reason""}",,,,,,,,
+,,,,,,,,,,,,,,,
+,Codes,,,,,,,,,,,,,,
+,request_partner,0,OK,,,,,,,,,,,,
+,,200,Result found,,,,,,,,,,,,
+,,400,User cancel,,,,,,,,,,,,
+,,401,Unfinished review,,,,,,,,,,,,
+,,404,No match,,,,,,,,,,,,
+,call_end,0,OK,,,,,,,,,,,,
+,,500,Technical reason,,,,,,,,,,,,
+,,400,User reason (not there or rejected),,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+Samples from point of view of person who searches,,,,,,,,,Samples from point of view of person who receives notification,,,,,,
+,,,,,,,,,,,,,,,
+Sample,Sample of no partner,,,,,,,,,N/A,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,-,-,-,-,-,-
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,null,null,404,"{lang: en, theme: 6}",,,,-,-,-,-,-,-
+,,,,,,,,,,,,,,,
+Sample,Sample of a normal call,,,,,,,,Sample,Sample of a normal call,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,Event name,Device ID,Call ID,Partner ID,Code,Data
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,"{role: std, lang: en, theme: 6}",,,,-,-,-,-,-,-
+,call_invite,05421d6a-fa11-49d7-ae0c-931488049720,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,null,,,,call_invite,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049721,0,"{role: tch, lang: en, theme: 6}"
+,call_start,05421d6a-fa11-49d7-ae0c-931488049722,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,null,,,,call_start,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049723,0,null
+,call_end,05421d6a-fa11-49d7-ae0c-931488049723,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,{duration: 1200},,,,call_end,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049724,0,{duration: 1200}
+,,,,,,,,,,,,,,,
+Sample,Sample of a failed call no microphone,,,,,,,,,,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,Event name,Device ID,Call ID,Partner ID,Code,Data
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,"{role: tch, lang: es, theme: 0}",,,,-,-,-,-,-,-
+,call_invite,05421d6a-fa11-49d7-ae0c-931488049720,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,null,,,,call_invite,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049721,0,"{role: std, lang: en, theme: 0}"
+,call_end,05421d6a-fa11-49d7-ae0c-931488049723,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,500,"{reason: ""No local audio device""}",,,,call_end,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049724,400,"{reason: ""Rejected""}"
+,,,,,,,,,,,,,,,
+Sample,Sample of a dropped call,,,,,,,,,,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,Event name,Device ID,Call ID,Partner ID,Code,Data
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,"{role: std, lang: en, theme: 6}",,,,-,-,-,-,-,-
+,call_invite,05421d6a-fa11-49d7-ae0c-931488049720,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,null,,,,call_invite,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049721,0,"{role: tch, lang: en, theme: 6}"
+,call_start,05421d6a-fa11-49d7-ae0c-931488049722,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,null,,,,call_start,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049723,0,null
+,call_end,05421d6a-fa11-49d7-ae0c-931488049723,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,500,"{reason: ""RTC Timeout""}",,,,call_end,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049724,500,"{reason: ""RTC Timeout""}"
+,,,,,,,,,,,,,,,
+Sample,Sample of unfinished review,,,,,,,,,N/A,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,-,-,-,-,-,-
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,null,null,401,null,,,,-,-,-,-,-,-
+,,,,,,,,,,,,,,,
+Sample,Sample of a no answer,,,,,,,,,,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,Event name,Device ID,Call ID,Partner ID,Code,Data
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,"{role: tch, lang: fr, theme: 5}",,,,-,-,-,-,-,-
+,call_invite,05421d6a-fa11-49d7-ae0c-931488049720,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,400,null,,,,call_invite,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049721,400,"{role: std, lang: fr, theme: 5}"
+,call_end,05421d6a-fa11-49d7-ae0c-931488049723,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,400,"{reason: ""Expired""}",,,,call_end,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049724,400,"{reason: ""Expired""}"
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+Sample,Sample of a rejected call by partner,,,,,,,,,,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,Event name,Device ID,Call ID,Partner ID,Code,Data
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,"{role: std, lang: en, theme: 6}",,,,-,-,-,-,-,-
+,call_invite,05421d6a-fa11-49d7-ae0c-931488049720,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,400,null,,,,call_invite,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049721,400,"{role: tch, lang: en, theme: 6}"
+,call_end,05421d6a-fa11-49d7-ae0c-931488049723,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,400,"{reason: ""Rejected""}",,,,call_end,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049724,400,"{reason: ""Rejected""}"
+,,,,,,,,,,,,,,,
+Sample,Sample of a rejected call locally,,,,,,,,,,,,,,
+,Event name,Device ID,Call ID,Partner ID,Code,Data,,,,Event name,Device ID,Call ID,Partner ID,Code,Data
+,request_partner,05421d6a-fa11-49d7-ae0c-931488049719,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,"{role: std, lang: en, theme: 6}",,,,-,-,-,-,-,-
+,call_invite,05421d6a-fa11-49d7-ae0c-931488049720,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,0,null,,,,call_invite,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049721,0,"{role: tch, lang: en, theme: 6}"
+,call_end,05421d6a-fa11-49d7-ae0c-931488049723,aa01ad3467532fb74b0d35ec8a6ddc9b,e0c6453b-2901-4b53-8365-88ba324334cd,400,"{reason: ""Rejected""}",,,,call_end,e0c6453b-2901-4b53-8365-88ba324334cd,aa01ad3467532fb74b0d35ec8a6ddc9b,05421d6a-fa11-49d7-ae0c-931488049723,400,"{reason: ""Rejected""}"

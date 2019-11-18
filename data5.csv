@@ -1,0 +1,5 @@
+Event name	Device ID	Call ID	Partner ID	Code	Data
+request_partner	05421d6a-fa11-49d7-ae0c-931488049719	aa01ad3467532fb74b0d35ec8a6ddc9b	e0c6453b-2901-4b53-8365-88ba324334cd	0	{role: std, lang: en, theme: 6}
+call_invite	05421d6a-fa11-49d7-ae0c-931488049720	aa01ad3467532fb74b0d35ec8a6ddc9b	e0c6453b-2901-4b53-8365-88ba324334cd	0	null
+call_start	05421d6a-fa11-49d7-ae0c-931488049722	aa01ad3467532fb74b0d35ec8a6ddc9b	e0c6453b-2901-4b53-8365-88ba324334cd	0	null
+call_end	05421d6a-fa11-49d7-ae0c-931488049723	aa01ad3467532fb74b0d35ec8a6ddc9b	e0c6453b-2901-4b53-8365-88ba324334cd	0	{duration: 1200}

@@ -1,0 +1,4 @@
+{"Event name": "request_partner", "Call ID": "aa01ad3467532fb74b0d35ec8a6ddc9b", "Code": "0", "Device ID": "05421d6a-fa11-49d7-ae0c-931488049719", "Partner ID": "e0c6453b-2901-4b53-8365-88ba324334cd", "Data": "{role: std, lang: en, theme: 6}"}
+{"Event name": "call_invite", "Call ID": "aa01ad3467532fb74b0d35ec8a6ddc9b", "Code": "0", "Device ID": "05421d6a-fa11-49d7-ae0c-931488049720", "Partner ID": "e0c6453b-2901-4b53-8365-88ba324334cd", "Data": "null"}
+{"Event name": "call_start", "Call ID": "aa01ad3467532fb74b0d35ec8a6ddc9b", "Code": "0", "Device ID": "05421d6a-fa11-49d7-ae0c-931488049722", "Partner ID": "e0c6453b-2901-4b53-8365-88ba324334cd", "Data": "null"}
+{"Event name": "call_end", "Call ID": "aa01ad3467532fb74b0d35ec8a6ddc9b", "Code": "0", "Device ID": "05421d6a-fa11-49d7-ae0c-931488049723", "Partner ID": "e0c6453b-2901-4b53-8365-88ba324334cd", "Data": "{duration: 1200}"}
